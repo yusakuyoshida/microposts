@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_message, only: [:edit, :update]
   def show
     @user=User.find(params[:id])
+    @microposts=@user.microposts
   end
   
   def new
@@ -38,5 +39,6 @@ class UsersController < ApplicationController
   
   def set_message
     @user=User.find(params[:id])
+    redirect_to root_path unless current_user?(@user)
   end
 end
