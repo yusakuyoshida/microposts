@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+     session[:user_id] = @user.id
+     flash[:success] = "Welcome to the Sample App!"
+     redirect_to @user
     else
       render 'new'
     end
@@ -39,6 +40,6 @@ class UsersController < ApplicationController
   
   def set_message
     @user=User.find(params[:id])
-    redirect_to root_path unless current_user?(@user)
+    redirect_to root_path unless @user ==  User.find_by(id:session[:user_id])
   end
 end
