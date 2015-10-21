@@ -1,0 +1,9 @@
+<h1>フォロー一覧</h1>
+
+<% @followings.each do |user| %>
+<%= gravatar_for user %>
+<%= user.name %></br>
+<%= user.email %></br>
+<%= user.location %></br>
+<%= user.profile %></br></br>
+<% end %>

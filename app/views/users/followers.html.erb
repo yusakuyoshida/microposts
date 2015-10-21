@@ -1,0 +1,8 @@
+<h1>フォロワー一覧</h1>
+<% @followers.each do |user| %>
+<%= gravatar_for user %>
+<%= user.name %></br>
+<%= user.email %></br>
+<%= user.location %></br>
+<%= user.profile %></br></br>
+<% end %>
