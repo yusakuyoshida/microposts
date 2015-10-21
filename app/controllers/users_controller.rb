@@ -42,6 +42,10 @@ class UsersController < ApplicationController
     @followers=@user.follower_users
   end
   
+  def index
+    @users=User.all
+  end
+  
   
   private
   
