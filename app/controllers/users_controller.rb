@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_message, only: [:edit, :update]
+  before_action :logged_in_user, only: [:index]
+  
   def show
     @user=User.find(params[:id])
     @microposts=@user.microposts
