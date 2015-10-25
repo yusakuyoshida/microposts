@@ -17,6 +17,13 @@ Rails.application.routes.draw do
       get 'followings', 'followers'
     end
   end
+  
+  resources :favorites, only: [:create, :destroy]
+  resources :favorites do
+    member do
+      get 'favorite'
+    end
+  end
     
 end
 

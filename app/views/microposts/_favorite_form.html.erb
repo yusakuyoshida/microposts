@@ -1,0 +1,9 @@
+<% if current_user != @user %>
+  <div id="favorite_form">
+  <% if current_user.favorite_userposts.include?(@feed_item) %>
+    <%= render 'microposts/cancel_favorite' %>
+  <% else %>
+    <%= render 'microposts/favorite' %>
+  <% end %>
+  </div>
+<% end %>

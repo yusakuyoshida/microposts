@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
     @microposts=@user.microposts
+    @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
   end
   
   def new

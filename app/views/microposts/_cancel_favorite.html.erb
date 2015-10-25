@@ -1,0 +1,11 @@
+<!--
+<%= form_for(current_user.favorites.find_by(favoritepost_id: @feed_item.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "cancel favorite", class: "btn" %>
+<% end %>
+-->
+<%= form_for(current_user.favorites.find_by(favoritepost_id: @feed_item.id),
+             html: { method: :delete }) do |f| %>
+<%= f.submit "cancel favorite", class: "btn" %>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>お気に入り一覧</h1>
+  </div>
+  <% @favoriteposts.each do |fp| %>
+  <div class="panel-body">
+    <%= gravatar_for fp.user, size: 52 %>
+    <%= fp.content %>
+  </div>
+  <% end %>
+</div>  
